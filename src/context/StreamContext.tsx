@@ -30,7 +30,7 @@ const anthropicModelFetch = async (
 
   const { config } = useAnthropicModel(messages);
 
-  const stream = anthropic.messages.stream(config);
+  const stream: any = anthropic.messages.stream(config);
 
   const botMessage = {
     role: "assistant",
