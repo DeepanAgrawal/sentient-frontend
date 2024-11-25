@@ -1,21 +1,48 @@
+/* src/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+#__next {
+  flex: 1;
+  height: 80vh;
+  max-height: 80vh;
+}
+
+@layer components {
+
+
+  /* User message bubble tail */
+  .before-user-bubble {
+    position: relative;
   }
-}
+  .before-user-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -10px; /* Tail aligned with the right edge */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #3b82f6 transparent; /* Blue tail */
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Assistant message bubble tail */
+  .before-assistant-bubble {
+    position: relative;
+  }
+  .before-assistant-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -10px; /* Tail aligned with the left edge */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #e5e7eb transparent; /* Gray tail */
+  }
 }

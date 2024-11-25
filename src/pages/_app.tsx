@@ -1,6 +1,20 @@
-import "@sentient/styles/globals.css";
-import type { AppProps } from "next/app";
+import "../styles/globals.css";
+import { StreamProvider } from "../context/StreamContext";
+import HomePage from ".";
+import dotenv from "dotenv";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+dotenv.config();
+// jest.setup.js
+import "@testing-library/jest-dom"; // for additional assertions
+
+global.React = require("react"); // Ensure React is globally available if necessary
+
+function MyApp() {
+  return (
+    <StreamProvider>
+      <HomePage />
+    </StreamProvider>
+  );
 }
+
+export default MyApp;
