@@ -6,6 +6,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { ChatRequestOptions, generateId, Message } from "ai";
 import useAnthropicModel from "@sentient/hooks/useModelConfig";
 import { Metrics, StreamContextProps } from "@sentient/types";
+import { RequestInit } from "@anthropic-ai/sdk/_shims/auto/types";
 
 export const StreamContext = createContext<StreamContextProps | undefined>(
   undefined
@@ -87,7 +88,7 @@ export const StreamProvider: React.FC<{ children: ReactNode }> = ({
     setInput,
     setMessages,
   } = useChat({
-    fetch: (_, { body }: RequestInit | undefined) => {
+    fetch: (_, { body }: RequestInit | undefined | any) => {
       return anthropicModelFetch(
         JSON.parse(body).messages,
         append,
