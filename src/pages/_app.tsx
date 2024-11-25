@@ -5,7 +5,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 // jest.setup.js
-import "@testing-library/jest-dom"; // for additional assertions
 
 global.React = require("react"); // Ensure React is globally available if necessary
 
