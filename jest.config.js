@@ -5,4 +5,6 @@ module.exports = {
   },
   testEnvironment: 'jsdom', // Or 'node' depending on your use case
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  setupFilesAfterEnv: ['./jest.setup.js'],
+
 };

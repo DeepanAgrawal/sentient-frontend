@@ -1,4 +1,4 @@
-import { Message } from "ai";
+import { ChatRequestOptions, Message } from "ai";
 
 export interface ParameterControlProps {
   label: string;
